@@ -22,7 +22,7 @@ const CounterView: React.FC<CounterProps> = ({ count, inc, dec }) => (
 );
 
 
-const Counter = () => {
+const Counter: React.FC = () => {
     const counter = useCounterStore(counter => ({
         count: counter.count,
         inc: counter.inc,
