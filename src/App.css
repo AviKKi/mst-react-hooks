@@ -1,3 +1,12 @@
+/* Remove default dotter outline in mozilla */
+button::-moz-focus-inner {
+  border: 0;
+}
+a {
+  outline: 0;
+}
+/* */
+
 :root {
   --color-bg: #020631;
   --color-primary: rgb(85, 41, 220);
