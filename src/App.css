@@ -1,38 +1,79 @@
-.App {
-  text-align: center;
+:root {
+  --color-bg: #020631;
+  --color-primary: rgb(85, 41, 220);
+  --color-primary-faded: rgba(108, 72, 214, 0.4);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background: var(--color-bg);
+  font: 14px "Nunito", sans-serif;
+  color: #ffffff;
+  --color: #8fc866;
+  --hover: #66c887;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav > ul {
   display: flex;
-  flex-direction: column;
+}
+nav > ul {
+  list-style: none;
+}
+nav > ul > li > a {
+  text-decoration: none;
+  color: #fff;
+}
+.slide {
+  background: none;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+  color: var(--color);
+  transition: 0.25s;
+  width: max-content;
+}
+
+.slide:hover,
+.slide:focus {
+  box-shadow: inset 8.3em 0 0 0 var(--hover);
+}
+
+.button {
+  width: 140px;
+  height: 45px;
+  font-family: "Roboto", sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+.button-round {
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  font-size: 20px;
+}
+.button:hover {
+  background-color: var(--color-primary);
+  box-shadow: 0px 15px 20px var(--color-primary-faded);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.container {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.count {
+  font-size: 40px;
+  padding: 0 20px;
 }
