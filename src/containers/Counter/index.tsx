@@ -1,6 +1,6 @@
 import React from "react"
 import Mark from '../../components/Mark'
-
+import { useCounterStore } from '../../utils/storeHooks'
 
 interface CounterProps {
     count: number,
@@ -22,4 +22,27 @@ const CounterView: React.FC<CounterProps> = ({ count, inc, dec }) => (
 );
 
 
-export default CounterView
+const Counter = () => {
+    const counter = useCounterStore(counter => ({
+        count: counter.count,
+        inc: counter.inc,
+        dec: counter.dec
+    }))
+    return <CounterView
+        count={counter.count}
+        inc={counter.inc}
+        dec={counter.dec}
+    />
+}
+
+// const Counter = () => useCounterStore(
+//     ({ count, inc, dec }) => <CounterView
+//         count={count}
+//         inc={inc}
+//         dec={dec}
+//     />
+// )
+
+// const Counter = () => useCounterStore(CounterView)
+
+export default Counter
